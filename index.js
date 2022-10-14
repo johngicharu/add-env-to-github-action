@@ -1,5 +1,3 @@
-const core = require('@actions/core');
-
 /**
  * Logs to the console
  */
@@ -43,5 +41,6 @@ try {
     // Copy "github_token" input variable to "GH_TOKEN" env variable (required by `electron-builder`)
     setEnv('GH_TOKEN', getInput('github_token', true));
 } catch (error) {
-    core.setFailed(error.message);
+    console.error(error);
+    exit("Failed to Execute Function");
 }
