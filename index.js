@@ -21,6 +21,7 @@ const getEnv = (name) => process.env[name.toUpperCase()] || null;
  */
 const setEnv = (name, value) => {
     if (value) {
+        console.log(name, value);
         process.env[name.toUpperCase()] = value.toString();
     }
 };
